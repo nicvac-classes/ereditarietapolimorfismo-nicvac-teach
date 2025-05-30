@@ -5,9 +5,11 @@ import java.util.Scanner;
 
 // Ogni classe va definita nel suo file java.
 // Per comodità, solo per motivi didattici, definiamo tutte le classi in un unico file, nella classe Esercizio
-class Esercizio {
+class Lezione {
 
-    class Persona {
+    //Uso static class solo perchè in questo caso sto usando classi "innestate" per comodità didattica.
+    // Normalmente non si antepone static davanti ad una classe.
+    static class Persona {
         public String nome;
         
         public Persona(String nomeP){
@@ -18,7 +20,7 @@ class Esercizio {
         }
     }
 
-    class Sportivo extends Persona {
+    static class Sportivo extends Persona {
         public String sport;
         public Sportivo(String nomeP, String sportP){
             super(nomeP);
@@ -27,7 +29,7 @@ class Esercizio {
 
     }
 
-    class Calciatore extends Sportivo {
+    static class Calciatore extends Sportivo {
         public String squadra;
         public String ruolo;
         public Calciatore(String nomeP, String squadraP, String ruoloP){
@@ -40,7 +42,7 @@ class Esercizio {
         }
     }
 
-    class Tennista extends Sportivo {
+    static class Tennista extends Sportivo {
         public int ranking;
         public Tennista(String nomeP, int rankingP){
             super(nomeP,"Tennis");
@@ -54,11 +56,15 @@ class Esercizio {
 
     // Il programma parte con una chiamata a main().
     public static void main(String args[]) {
-        String nome;
-        Scanner in = new Scanner( System.in );
-        System.out.print("Inserisci il tuo nome: ");
-        nome = in.nextLine();
-        System.out.println("Ciao "+nome+"!");
+
+        Persona francesco = new Persona("Francesco");
+        francesco.saluta();
+
+        //Errore
+        //francesco.segnaGoal();
+
+
+
     }
 }
 
