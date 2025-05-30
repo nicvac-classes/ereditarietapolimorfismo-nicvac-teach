@@ -27,6 +27,10 @@ class Lezione {
             this.sport=sportP; 
         }
 
+        public void saluta() {
+            System.out.println("Ciao, sono "+nome+" e pratico "+sport);
+        }
+
     }
 
     static class Calciatore extends Sportivo {
@@ -40,6 +44,11 @@ class Lezione {
         public void segnaGoal(){
             System.out.println(nome+" ha segnato un goal per "+squadra+"!");
         }
+
+        public void saluta() {
+            System.out.println("Ciao, sono "+nome+" e pratico "+sport+ " per la squadra "+squadra);
+        }
+
     }
 
     static class Tennista extends Sportivo {
@@ -51,6 +60,11 @@ class Lezione {
         public void scaleMondiale(){
             System.out.println(nome+" è al "+ranking+"° posto nel ranking mondiale!");
         }
+
+        public void saluta() {
+            System.out.println("Ciao, sono "+nome+" e pratico "+sport+ " e sono al "+ranking+"° posto");
+        }
+
     }
 
 
@@ -67,8 +81,17 @@ class Lezione {
         Calciatore giovanni = new Calciatore("Giovanni", "Napoli", "Centrocampista");
         giovanni.saluta();
         giovanni.segnaGoal();
-        
 
+        saluta( giovanni );
+        saluta( francesco );
+
+    }
+
+    public static void saluta(Persona persona) {
+        System.out.println();
+        System.out.println("Qui mostro il polimorfismo. Farò il saluto a seconda della classe di appartenenza di persona");
+        System.out.println("Persona è della classe: " + persona.getClass().getName() );
+        persona.saluta();
     }
 }
 
