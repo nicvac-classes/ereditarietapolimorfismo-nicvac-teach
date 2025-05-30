@@ -4,8 +4,7 @@
 import java.util.Scanner;
 
 // Ogni classe va definita nel suo file java.
-// Per comodità, solo per motivi didattici, definiamo tutte le classi 
-//  nella classe Esercizio
+// Per comodità, solo per motivi didattici, definiamo tutte le classi in un unico file, nella classe Esercizio
 class Esercizio {
 
     class Persona {
