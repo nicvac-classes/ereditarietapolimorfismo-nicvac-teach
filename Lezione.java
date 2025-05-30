@@ -60,10 +60,14 @@ class Lezione {
         Persona francesco = new Persona("Francesco");
         francesco.saluta();
 
-        //Errore
+        //Errore: segnaGoal non è un messaggio che posso inviare (o un metodo che posso invocare) 
+        //        ad un oggetto di classe Persona (o una istanza di Persona).
         //francesco.segnaGoal();
 
-
+        Calciatore giovanni = new Calciatore("Giovanni", "Napoli", "Centrocampista");
+        giovanni.saluta();
+        giovanni.segnaGoal();
+        
 
     }
 }
